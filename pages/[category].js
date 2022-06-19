@@ -1,5 +1,7 @@
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import GameCard from "components/GameCard";
+import PostCard from "components/PostCard";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
@@ -8,10 +10,8 @@ import nookies from 'nookies';
 
 import Layout from "layouts/Layout";
 import Carousel from "components/Carousel";
-import GameCard from "components/GameCard";
-import PostCard from "components/PostCard";
 
-const Home = ({posts, games, currentUser }) => {
+const Category = ({posts, games, currentUser }) => {
   return (
     <Layout currentUser={currentUser}>
       <Container maxWidth="xl">
@@ -26,7 +26,14 @@ const Home = ({posts, games, currentUser }) => {
           <Button variant="contained" href="/rejestracja">Dołącz</Button>
         </Stack>
 
-        <Typography variant='h3' component='h2' mt={3} mb={2}>Najnowsze na blogu</Typography>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6}>
+            <Typography variant='h3' component='h2' mt={3} mb={2}>Najnowsze recenzje</Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Typography variant='h3' component='h2' mt={3} mb={2}>Ostatnio ocenione</Typography>
+          </Grid>
+        </Grid>
 
         <Grid container spacing={3}>
           { posts.map(post => (
@@ -35,20 +42,11 @@ const Home = ({posts, games, currentUser }) => {
           }
         </Grid>
 
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6} lg={8}>
-            <Typography variant='h3' component='h2' mt={3} mb={2}>Najnowsze recenzje</Typography>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <Typography variant='h3' component='h2' mt={3} mb={2}>Ostatnio ocenione</Typography>
-          </Grid>
-        </Grid>
+        <Typography variant='h3' component='h2' mt={3} mb={2}>Aktualności</Typography>
 
         <Grid container spacing={3}>
           { games.map(game => (
-            <Grid item xs={12} sm={6} md={4}>
-              <GameCard key={game.id} game={game} />
-            </Grid>
+            <GameCard key={game.id} game={game} />
             ))
           }
         </Grid>
@@ -77,4 +75,4 @@ export async function getServerSideProps(ctx) {
   return { props: { posts: data, currentUser: user, games: games.data } };
 };
 
-export default Home;
+export default Category;

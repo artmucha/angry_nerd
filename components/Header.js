@@ -10,8 +10,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+
+import Image from 'next/image';
 
 import Link from 'next/link';
 
@@ -46,10 +47,15 @@ const Header = ({currentUser}) => {
           <Typography
             variant="h6"
             noWrap
-            component="div"
+            component="h1"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            LOGO
+            <Image
+              width={200}
+              height={30}
+              src="/logo.png"
+              alt="Angry Nerds"
+            />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -67,25 +73,34 @@ const Header = ({currentUser}) => {
               anchor='left'
               open={open}
               onClose={toggleDrawer(false)}
+              sx={{
+                width: '90%',
+                maxWidth: '400px'
+              }}
             >
             {menu.map((page) => (
-              <MenuItem>
-                <Link href={page.slug} key={page.name}>
-                  <a>
-                    <Typography textAlign="center">{page.name}</Typography>
-                  </a>
-                </Link>
-              </MenuItem>
+                <Button
+                  href={page.slug}
+                  key={page.name}
+                  sx={{ color: 'white', display: 'block' }}
+                >
+                  {page.name}
+                  </Button>
             ))}
           </Drawer>
           </Box>
           <Typography
             variant="h6"
             noWrap
-            component="div"
+            component="h1"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            LOGO
+            <Image
+              width={200}
+              height={30}
+              src="/logo.png"
+              alt="Angry Nerds"
+            />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {menu.map((page) => (
@@ -102,11 +117,9 @@ const Header = ({currentUser}) => {
           <Box sx={{ flexGrow: 0 }}>
           { currentUser ? (
             <>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt={currentUser.username} src="/static/images/avatar/2.jpg" />
-                </IconButton>
-              </Tooltip>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <Avatar alt={currentUser.username} src="/static/images/avatar/2.jpg" />
+              </IconButton>
               <Menu
                 sx={{ mt: '45px' }}
                 id="menu-appbar"

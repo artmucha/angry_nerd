@@ -15,6 +15,7 @@ const Footer = () => {
   return (
     <Box 
       py={3}
+      mt={3}
       sx={{
         backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05))',
       }}
@@ -71,7 +72,7 @@ const Footer = () => {
             
             <Grid container>
             { retro.map(({name, children}) => ( 
-              <Grid item xs={12} md={3}>
+              <Grid item xs={12} md={3} key={name}>
                 <List>
                   <Typography
                     key={name}

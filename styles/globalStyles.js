@@ -1,9 +1,6 @@
-import { useTheme } from '@mui/material/styles';
 import { GlobalStyles as GlobalThemeStyles } from '@mui/material';
 
 const GlobalStyles = () => {
-  const theme = useTheme();
-
   return (
     <GlobalThemeStyles
       styles={{
@@ -19,7 +16,9 @@ const GlobalStyles = () => {
         },
         body: {
           width: '100%',
-          height: '100%'
+          height: '100%',
+          color: '#ffffff',
+          backgroundColor: '#151515'
         },
         '#root': {
           width: '100%',

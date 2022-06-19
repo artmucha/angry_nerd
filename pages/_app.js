@@ -14,7 +14,7 @@ const ClientApp = props => {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>Angry Nerd</title>
+        <title>Angry Nerds - oceniamy gry</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>

@@ -1,9 +1,7 @@
 import { styled } from '@mui/material/styles';
 
 import Header from 'components/Header';
-
-const APP_BAR_MOBILE = 64;
-const APP_BAR_DESKTOP = 92;
+import Footer from 'components/Footer';
 
 const RootStyle = styled('div')({
   minHeight: '100%',
@@ -14,16 +12,18 @@ const MainStyle = styled('div')(({ theme }) => ({
   flexGrow: 1,
   overflow: 'auto',
   minHeight: '100%',
+  marginTop: theme.spacing(3)
 }));
 
-const Layout = ({ children }) => {
+const Layout = ({ children, currentUser }) => {
 
   return (
     <RootStyle>
-      <Header />
+      <Header currentUser={currentUser} />
       <MainStyle>
         { children }
       </MainStyle>
+      <Footer />
     </RootStyle>
   );
 };

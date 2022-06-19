@@ -2,32 +2,32 @@ export const platforms = [
   {
     id: 1,
     name: 'PC',
-    slug: 'pc',
+    slug: '/gry/pc',
   },
   {
     id: 2,
     name: 'PlayStation 5',
-    slug: 'playstation5',
+    slug: '/gry/playstation5',
   },
   {
     id: 3,
     name: 'Xbox Series X / S',
-    slug: 'xbox-series-x',
+    slug: '/gry/xbox-series-x',
   },
   {
     id: 4,
     name: 'Switch',
-    slug: 'nintendo-switch',
+    slug: '/gry/nintendo-switch',
   },
   {
     id: 5,
     name: 'PlayStation 4',
-    slug: 'playstation4',
+    slug: '/gry/playstation4',
   },
   {
     id: 6,
     name: 'Xbox One',
-    slug: 'xbox-one',
+    slug: '/gry/xbox-one',
   },
 
 ];
@@ -40,27 +40,27 @@ export const retro = [
       {
         id: 1,
         name: 'PlayStation 3',
-        slug: 'playstation3',
+        slug: '/gry/playstation3',
       },
       {
         id: 2,
         name: 'PlayStation 2',
-        slug: 'playstation2',
+        slug: '/gry/playstation2',
       },
       {
         id: 3,
         name: 'PlayStation',
-        slug: 'playstation1',
+        slug: '/gry/playstation1',
       },
       {
         id: 4,
         name: 'PS Vita',
-        slug: 'ps-vita',
+        slug: '/gry/ps-vita',
       },
       {
         id: 5,
         name: 'PSP',
-        slug: 'psp',
+        slug: '/gry/psp',
       },
     ],
   },
@@ -72,12 +72,12 @@ export const retro = [
       {
         id: 1,
         name: 'Xbox 360',
-        slug: 'xbox360',
+        slug: '/gry/xbox360',
       },
       {
         id: 2,
         name: 'Xbox',
-        slug: 'xbox-old',
+        slug: '/gry/xbox-old',
       },
     ],
   },
@@ -89,42 +89,42 @@ export const retro = [
       {
         id: 1,
         name: 'Wii U',
-        slug: 'wii-u',
+        slug: '/gry/wii-u',
       },
       {
         id: 2,
         name: 'Wii',
-        slug: 'wii',
+        slug: '/gry/wii',
       },
       {
         id: 3,
         name: 'GameCube',
-        slug: 'gamecube',
+        slug: '/gry/gamecube',
       },
       {
         id: 4,
         name: 'Nintendo 64',
-        slug: 'nintendo-64',
+        slug: '/gry/nintendo-64',
       },
       {
         id: 5,
         name: 'Nintendo 3DS',
-        slug: 'nintendo-3ds',
+        slug: '/gry/nintendo-3ds',
       },
       {
         id: 6,
         name: 'Nintendo DS',
-        slug: 'nintendo-ds',
+        slug: '/gry/nintendo-ds',
       },
       {
         id: 7,
         name: 'Game Boy Advance',
-        slug: 'game-boy-advance',
+        slug: '/gry/game-boy-advance',
       },
       {
         id: 8,
         name: 'Game Boy Color',
-        slug: 'game-boy-color',
+        slug: '/gry/game-boy-color',
       },
     ],
   },

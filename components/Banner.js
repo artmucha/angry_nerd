@@ -24,7 +24,7 @@ const CoverImgStyle = styled('img')({
   position: 'absolute'
 });
 
-const CarouselItem = ({ post }) => {
+const Banner = ({ post }) => {
 
   return (
     <Grid item xs={12}>
@@ -74,4 +74,4 @@ const CarouselItem = ({ post }) => {
   );
 };
 
-export default CarouselItem;
+export default Banner;

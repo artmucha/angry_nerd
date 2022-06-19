@@ -1,15 +1,15 @@
 const menu = [
   {
     name: 'najlepsze',
-    slug: '/gry/najlepsze',
+    slug: '/najlepsze',
   },
   {
     name: 'nowości',
-    slug: '/gry/nowosci',
+    slug: '/nowosci',
   },
   {
     name: 'zapowiedzi',
-    slug: '/gry/zapowiedzi',
+    slug: '/zapowiedzi',
   },
   {
     name: 'blog',

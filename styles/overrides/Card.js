@@ -7,17 +7,19 @@ const Card = (theme) => {
           borderRadius: theme.shape.borderRadiusMd,
           position: 'relative',
           zIndex: 0,
+          boxShadow: 'none',
+
+          transition: "150ms",
+          "&:hover": {
+            backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));',
+          },
         }
       }
     },
     MuiCardHeader: {
-      defaultProps: {
-        titleTypographyProps: { variant: 'h6' },
-        subheaderTypographyProps: { variant: 'body2' }
-      },
       styleOverrides: {
         root: {
-          padding: theme.spacing(3, 3, 0)
+          padding: theme.spacing(3, 3, 0),
         }
       }
     },

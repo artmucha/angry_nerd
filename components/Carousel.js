@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Grid, Stack, Box, Radio, Fade } from '@mui/material';
 
-import CarouselItem from 'components/Carousel/CarouselItem';
+import Banner from 'components/Banner';
 
 const Carousel = ({items}) => {
   const [slide, setSlide] = useState(0);
@@ -23,10 +23,6 @@ const Carousel = ({items}) => {
         position: 'relative',
         width: '100%',
         height: '60vh',
-        mt: {
-          xs: 2,
-          sm: 3,
-        }
       }}
     >
       { 
@@ -45,7 +41,7 @@ const Carousel = ({items}) => {
               height: '100%'
             }}>
             <Box>
-              <CarouselItem post={item} />
+              <Banner post={item} />
             </Box>
           </Fade>
         ))
