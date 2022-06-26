@@ -1,18 +1,37 @@
+import { DefaultSeo } from 'next-seo'
+import SEO from 'next-seo.config'
+
+import { ApolloProvider } from '@apollo/client';
+import { ThemeProvider } from 'styled-components';
 
 import Head from 'next/head';
 
-const ClientApp = props => {
-  const { Component, pageProps } = props;
+import GlobalStyles from 'styles/global';
+import theme from 'styles/theme';
+import { useApollo } from 'utils/apollo';
+
+function App({ Component, pageProps }) {
+  const client = useApollo(pageProps.initialApolloState)
 
   return (
-    <>
-      <Head>
-        <title>Angry Nerds - oceniamy gry</title>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
-      <Component {...pageProps} />
-      </>
-  );
-};
+      <ApolloProvider client={client}>
+        <ThemeProvider theme={theme}>
+          <Head>
+            <title>Angry Nerds</title>
+            <link rel="shortcut icon" href="/logo.png" />
+            <link rel="apple-touch-icon" href="/logo.png" />
+            <link rel="manifest" href="/manifest.json" />
+            <meta
+              name="description"
+              content="Angry Nerds - oceniamy gry!"
+            />
+          </Head>
+          <DefaultSeo {...SEO} />
+          <GlobalStyles />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </ApolloProvider>
+  )
+}
 
-export default ClientApp;
+export default App;
