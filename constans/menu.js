@@ -1,18 +1,18 @@
 const menu = [
   {
-    name: 'najlepsze',
+    name: 'Najlepsze',
     slug: '/najlepsze',
   },
   {
-    name: 'nowości',
+    name: 'Nowości',
     slug: '/nowosci',
   },
   {
-    name: 'zapowiedzi',
+    name: 'Zapowiedzi',
     slug: '/zapowiedzi',
   },
   {
-    name: 'blog',
+    name: 'Blog',
     slug: '/blog',
   },
 
