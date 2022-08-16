@@ -1,7 +1,49 @@
+import Home from 'templates/Home';
+import { postsMapper, gamesMapper } from 'utils/mappers';
+import { fetchAPI } from "utils/helpers";
 
-const Home = () => {
-  return (<div>Hello</div>)
+const Index = (props) => <Home {...props} />;
 
-}
+export async function getStaticProps() {
 
-export default Home;
+  const [bestGames, newGames, posts] = await Promise.all([
+    fetchAPI('/games', { 
+      populate: ['cover', 'platform'],
+      sort: ['ratingValue:desc'],
+      pagination: {
+        start: 0,
+        limit: 10,
+      },
+    }),
+    fetchAPI('/games', { 
+      populate: ['cover', 'platform', 'ratings'],
+      sort: ['ratings.createdAt:desc'],
+      pagination: {
+        start: 0,
+        limit: 10,
+      },
+    }),
+    fetchAPI('/posts', { 
+      populate: ['cover'],
+      pagination: {
+        start: 0,
+        limit: 10,
+      },
+    })
+  ]);
+
+  const banners = bestGames.data.slice(0,3);
+
+  console.log(bestGames.data[0].attributes.ratings)
+
+  return {
+    props: {
+      banners: postsMapper(banners),
+      bestGames: gamesMapper(bestGames.data),
+      newGames: gamesMapper(newGames.data),
+      blogPosts: postsMapper(posts.data),
+    }
+  }
+};
+
+export default Index;

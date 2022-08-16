@@ -4,7 +4,7 @@ import { ArrowForwardIos as ArrowRight } from '@styled-icons/material-outlined/A
 import Slider from 'components/Slider';
 import Card from 'components/Card';
 
-import * as S from './styles'
+import * as S from './styles';
 
 const settings = {
   arrows: true,
@@ -41,9 +41,9 @@ const settings = {
       }
     }
   ],
-  nextArrow: <ArrowRight aria-label="next games" />,
-  prevArrow: <ArrowLeft aria-label="previous games" />
-}
+  nextArrow: <ArrowRight aria-label="następne" />,
+  prevArrow: <ArrowLeft aria-label="poprzednie" />
+};
 
 const CardSlider = ({ items, color = 'white' }) => (
   <S.Wrapper color={color}>
@@ -53,6 +53,6 @@ const CardSlider = ({ items, color = 'white' }) => (
       ))}
     </Slider>
   </S.Wrapper>
-)
+);
 
 export default CardSlider;

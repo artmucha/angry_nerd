@@ -14,11 +14,11 @@ export const Title = styled.div`
 
 export const Content = styled.div`
   ${({ theme }) => css`
-    width: 100%;
     max-width: 60rem;
     cursor: auto;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     padding: ${theme.spacings.small};
     background: ${theme.colors.white};
     color: ${theme.colors.black};

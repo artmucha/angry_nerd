@@ -8,7 +8,7 @@ export default {
     images: [
       {
         url:
-          '/public/logo.png',
+          '/public/logo_dark.png',
         width: 2560,
         height: 1440,
         alt: 'Angry Nerds'

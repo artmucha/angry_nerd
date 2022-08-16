@@ -1,16 +1,15 @@
 import { useState } from "react";
 
-const useRequest = ({url, method, headers, onSuccess}) => {
+const useRequest = () => {
   const [error, setError] = useState(null);
   const [status, setStatus] = useState('');
 
-  const doRequest = async (body) => {
+  const doRequest = async ({url, method, headers, body, onSuccess}) => {
     try {
       setError(null);
       setStatus('pending');
       const res = await fetch(url, {method, headers, body: JSON.stringify(body)});
       const data = await res.json();
-      console.log(data);
 
       if (data && data.error) {
         setStatus('error');

@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react';
 import * as S from './styles';
 
 const Dropdown = ({ title = 'Ups', children }) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : 'unset'
+    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
 
     return () => {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = 'unset';
     }
-  }, [isOpen])
+  }, [isOpen]);
 
   return (
     <S.Wrapper isOpen={isOpen}>

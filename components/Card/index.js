@@ -7,11 +7,12 @@ const Card = ({
   id,
   slug,
   title,
+  platform,
   img,
   rating,
 }) => (
   <S.Wrapper>
-    <Link href={`${slug}`} passHref>
+    <Link href={slug} passHref>
       <S.ImageBox>
         <Image src={img} alt={title} layout="fill" objectFit="cover" />
       </S.ImageBox>
@@ -20,11 +21,17 @@ const Card = ({
       <Link href={slug} passHref>
         <a>
           <S.Title>{title}</S.Title>
-          <S.Info>PS4</S.Info>
         </a>
       </Link>
+      {!!platform && 
+        <Link href={platform.slug} passHref>
+          <a>
+            <S.Info>{platform.name}</S.Info>
+          </a>
+        </Link>
+      }
       <S.Box>
-        { !!rating && <S.Rating>9.5</S.Rating> }
+        { !!rating && <S.Rating>{rating}</S.Rating> }
       </S.Box>
     </S.Content>
   </S.Wrapper>

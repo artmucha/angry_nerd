@@ -13,4 +13,7 @@ module.exports = withPWA({
   images: {
     domains: ['localhost', 'media.rawg.io'],
   },
+  compiler: {
+    styledComponents: true,
+  },
 });

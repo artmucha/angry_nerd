@@ -11,7 +11,7 @@ import Dropdown from 'components/Dropdown';
 
 import * as S from './styles';
 
-const UserDropdown = ({ username = 'Artur' }) => {
+const UserDropdown = ({ username }) => {
   const { push } = useRouter();
 
   return (
@@ -25,7 +25,7 @@ const UserDropdown = ({ username = 'Artur' }) => {
       }
     >
       <S.Nav>
-        <Link href="/profile/me" passHref>
+        <Link href="/profil" passHref>
           <S.Link>
             <AccountCircle />
             <span>Profil</span>

@@ -14,6 +14,7 @@ export const gamesMapper = (games) => games.map((game) => (
     title: game.attributes.title,
     slug: `/${game.attributes.platform.data?.attributes.slug}/${game.attributes.slug}`,
     platform: game.attributes.platform.data?.attributes || null,
+    rating: game.attributes.ratingValue,
     img: getImageUrl(game.attributes.cover.data.attributes.url),
   }
 ));

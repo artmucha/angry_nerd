@@ -13,8 +13,9 @@ import UserDropdown from 'components/UserDropdown';
 
 import menu from 'constans/menu';
 
-const Menu = ({ username, loading = false }) => {
-  const [isOpen, setIsOpen] = useState(false)
+const Menu = ({ login, loading }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const username = login && JSON.parse(login)?.user?.username;
 
   return (
     <S.Wrapper isOpen={isOpen}>
@@ -25,8 +26,8 @@ const Menu = ({ username, loading = false }) => {
       </MediaMatch>
 
       <S.LogoWrapper>
-        <Link href="/" passHref>
-          <a>
+        <Link href="/">
+          <a title="Angry Nerds">
             <Logo />
           </a>
         </Link>
@@ -35,7 +36,7 @@ const Menu = ({ username, loading = false }) => {
       <MediaMatch greaterThan="medium">
         <S.MenuNav>
           {menu.map(({name, slug}) => (
-            <Link href={slug} passHref>
+            <Link key={slug} href={slug} passHref>
               <S.MenuLink>{name}</S.MenuLink>
             </Link>
           ))}
@@ -50,7 +51,7 @@ const Menu = ({ username, loading = false }) => {
             </S.IconWrapper>
             <MediaMatch greaterThan="medium">
               {!username ? (
-                <Link href="/sign-in" passHref>
+                <Link href="/logowanie" passHref>
                   <Button as="a">Zaloguj</Button>
                 </Link>
               ) : (
@@ -66,13 +67,13 @@ const Menu = ({ username, loading = false }) => {
             />
             <S.MenuNav>
               {menu.map(({name, slug}) => (
-                <Link href={slug} passHref>
+                <Link key={slug} href={slug} passHref>
                   <S.MenuLink>{name}</S.MenuLink>
                 </Link>
               ))}
 
               {!!username && (
-                <Link href="/profile/me" passHref>
+                <Link href="/profil" passHref>
                   <S.MenuLink>Profil</S.MenuLink>
                 </Link>
               )}
@@ -96,6 +97,6 @@ const Menu = ({ username, loading = false }) => {
       )}
     </S.Wrapper>
   )
-}
+};
 
 export default Menu;

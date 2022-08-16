@@ -29,7 +29,7 @@ const Footer = () => (
         </Heading>
         <nav id="categories">
           {menu.map(({name, slug}) => (
-            <Link href={slug}>
+            <Link key={slug} href={slug}>
               <a>{name}</a>
             </Link>
           ))}
@@ -43,7 +43,7 @@ const Footer = () => (
 
         <nav id="platforms">
           {platforms.map(({name, slug}) => (
-            <Link href={slug}>
+            <Link key={slug} href={slug}>
               <a>{name}</a>
             </Link>
           ))}

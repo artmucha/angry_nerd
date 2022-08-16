@@ -2,32 +2,32 @@ export const platforms = [
   {
     id: 1,
     name: 'PC',
-    slug: 'pc',
+    slug: '/pc',
   },
   {
     id: 2,
     name: 'PlayStation 5',
-    slug: 'playstation5',
+    slug: '/ps5',
   },
   {
     id: 3,
-    name: 'Xbox Series X / S',
-    slug: 'xbox-series-x',
+    name: 'Xbox Series X/S',
+    slug: '/xbox-series-x',
   },
   {
     id: 4,
     name: 'Switch',
-    slug: 'nintendo-switch',
+    slug: '/switch',
   },
   {
     id: 5,
     name: 'PlayStation 4',
-    slug: 'playstation4',
+    slug: '/ps4',
   },
   {
     id: 6,
     name: 'Xbox One',
-    slug: 'xbox-one',
+    slug: '/xbox-one',
   },
 
 ];
