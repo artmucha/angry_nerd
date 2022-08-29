@@ -1,7 +1,7 @@
 import * as S from './styles';
 
 const Logo = ({
-  color = 'light',
+  color = 'white',
 }) => (
   <S.Wrapper color={color}>
     angry nerds

@@ -9,7 +9,7 @@ export const Wrapper = styled.h1`
     color: ${theme.colors[color]};
     font-size: ${theme.font.sizes.medium};
     text-align: center;
-    background-image: url('/logo_${color}.png');
+    background-image: url('/logo_${color}.svg');
     background-size: contain;
     background-position: 50% 0;
     background-repeat: no-repeat;

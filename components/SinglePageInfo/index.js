@@ -17,7 +17,6 @@ const SinglePageInfo = ({ id, title, rating, platform, cover, slug, type='game',
   const { auth: { login } } = useContext(AuthContext);
 
   const token = login ? JSON.parse(login).jwt : '';
-  const user = login ? JSON.parse(login).user : '';
 
   return (
     <S.Wrapper>
@@ -44,11 +43,10 @@ const SinglePageInfo = ({ id, title, rating, platform, cover, slug, type='game',
       }
   
     <Popup isOpen={isPopupOpen} setIsOpen={setIsPopupOpen}>
-      { user ? (
+      { token ? (
         <FormRating 
           game={{id, title, rating, platform, cover, slug}} 
           token={token}
-          user={user}
         />
       ) : (
         <>

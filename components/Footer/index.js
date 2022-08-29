@@ -11,7 +11,7 @@ const currentYear = new Date().getFullYear();
 
 const Footer = () => (
   <S.Wrapper>
-    <Logo color="dark" />
+    <Logo color="black" />
     <S.Content>
 
       <S.Column aria-labelledby="social-media">

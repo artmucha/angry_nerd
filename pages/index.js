@@ -34,8 +34,6 @@ export async function getStaticProps() {
 
   const banners = bestGames.data.slice(0,3);
 
-  console.log(bestGames.data[0].attributes.ratings)
-
   return {
     props: {
       banners: postsMapper(banners),
