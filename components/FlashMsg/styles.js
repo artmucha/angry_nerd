@@ -9,5 +9,6 @@ export const Wrapper = styled.div`
     position: fixed;
     top: ${theme.spacings.medium};
     right: 0;
+    z-index: ${theme.layers.alwaysOnTop}
   `}
 `;

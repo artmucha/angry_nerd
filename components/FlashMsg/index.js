@@ -1,8 +1,8 @@
 import * as S from './styles';
 
-const FlashMsg = ({status, message}) => (
-  <S.Wrapper color={status}>
-    {message}
+const FlashMsg = ({flash}) => (
+  <S.Wrapper color={flash.status}>
+    {flash.message}
   </S.Wrapper>
 );
 
